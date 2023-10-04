@@ -5,33 +5,51 @@
         </head>
 
     <body>
+        <div class="container">
         <h2>Santhosh Reddy Gurram goes on a cruise</h2>
+        <div class="form-group">
        <form>
+        <div>
            <label for="cabin">Shares Cabin</label>
            <input type="checkbox" id="cabin" value="True"><br>
-       
+        </div>
+        <br>
+        <div class="form-group">
            <label for="breakfast">Breakfast</label>
            <input type="checkbox" id="breakfast" value="True"><br>
-       
+        </div>
+        <br>
+        <div class="form-group">
            <label for="pool">Pool Pass</label>
            <input type="checkbox" id="pool" value="False"><br>
-       
-           <input type="button" onclick="selectCruise()" value="Select a cruise"><br>
+           <input type="button" class="btn btn-success" type="button" onclick="selectCruise()" value="Select a cruise"><br>
+           </div>
        </form>
+       <br>
+       </div>
        
        <p id="cruiseResult"></p>
-
+        
+       <div class="container">
+       <div class="form-group">
        <form>
+        <div>
            <label for="days">Enter the number of days</label>
            <input type="text" id="days" value="7"><br>
-       
+        </div>
+        <br>
+        <div class="form-group">
            <label for="price">Enter price</label>
            <input type="text" id="price" value="1000"><br>
-       
+
            <input type="button" onclick="updateCruise()" value="Update the Cruise"><br>
+           </div>
        </form>
+       </div>
+       <br>
+
        <p id="updatecruise"></p>
-       
+    </div>
 <script> 
 let my_cruise = {};
 

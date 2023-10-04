@@ -7,17 +7,26 @@
     </head>
  
 <body>
-
-<h2>Author entry Santhosh Reddy Gurram</h2>
+  <div class="container">
+<h2 style="color:rgb(240, 94, 135)">Author entry Santhosh Reddy Gurram</h2>
+<h3 style="color:rgb(94, 179, 240)">Getting input</h3>
 
     <form>
+      <div class="form-group">
         <label for="author_name">The hidden author name</label>
         <input type="password" id="author_name" name="author_name" value="Dickens"> <br>
+        </div><br>
+
+        <div class="form-group">
         <label for="user_guess">Guess the author</label>
         <input type="text" id="user_guess" name="user_guess"> <br>
+        </div><br>
+
         <input type="button" onclick="checkAuthor()" value="Check the guess">
     </form>
     <p id="result"> Right/Wrong?</p>
+    </div>
+
     <div class="text-center">
       <img
         id="city"
@@ -31,19 +40,27 @@
     <script>
         let good = 0;
         let oops = 0;
+        let count = 0;
         function checkAuthor() {
             hidden_author_name = document.getElementById("author_name").value
             user_author_guess = document.getElementById("user_guess").value
+            result = document.getElementById("result");
+
             out = document.getElementById("result")
             if (hidden_author_name == user_author_guess) {
-                good = good + 1;
+                good++;
                 alert("You got it right");
-                out.innerHTML = `Correct Guess!  good: ${good}`;
             }
             else {
-                oops = oops + 1;
+                count++;
+                oops++;
                 alert("Sorry");
-                out.innerHTML = `Wrong Guess! oops: ${oops}`;
+                
+            }
+            result.innerHTML = `good counts: ${good} <br> oops counts: ${oops}`;
+            if(count>=7){
+                alert("Sorry, ran out of guesses."); 
+               document.getElementById('togglee').style.visibility = 'hidden';
             }
         }
 
